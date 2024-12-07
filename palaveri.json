@@ -1,0 +1,10 @@
+{
+    "aihe" : "Uudistettu menu",
+    "osallistujia" : 3,
+    "osallistujat" : [
+        "Mikko Mallikas", "Anna Malli", "Esa Esimerkki"
+    ],
+    "paikka" : "Tico Cafe",
+    "aloitus" : "12:00",
+    "kesto" : "2h"
+}

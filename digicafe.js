@@ -1,4 +1,4 @@
-fetch("https://iltar.github.io/other-projects/ticos.json")
+fetch("https://iltar.github.io/json-tehtava/ticos.json")
   .then(function(response) {
     return response.json();
   })

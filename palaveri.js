@@ -1,4 +1,4 @@
-fetch("https://iltar.github.io/other-projects/palaveri.json")
+fetch("https://iltar.github.io/json-tehtava/palaveri.json")
   .then(function(response) {
     return response.json();
   })
