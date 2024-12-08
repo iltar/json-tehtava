@@ -14,7 +14,7 @@ fetch(
 
 function kerro(data) {
   let teksti = "<h1>Junalla Tampereelle</h1>";
-  teksti += "<p>Juna-aikataulut Helsingistä Tampereelle</p>";
+  teksti += "<p>Juna aikataulut Helsingistä Tampereelle</p>";
   data.forEach((train) => {
     // ei peruttu ja ei ole vielä lähtenyt ja on pitkän matkan
     if (
@@ -35,13 +35,20 @@ function kerro(data) {
           ) {
             t = train.timeTableRows[i];
 
-            teksti += "</hr><h3>" + train.trainType + train.trainNumber + "</h3>";
             teksti +=
-              "<p>Lähtöaika Helsingistä: " +
-              muotoileAika(h.scheduledTime) + 
+              "</hr><h3>" + train.trainType + train.trainNumber + "</h3>";
+            teksti +=
+              "<p>Lähtöaika Helsingistä: " + muotoileAika(h.scheduledTime);
+            if (h.commercialTrack != "") {
+                teksti += " raiteelta " + h.commercialTrack;
+            }
+            teksti +=
               ". Saapumisaika Tampereelle: " +
-              muotoileAika(t.scheduledTime) +
-              "</p>";
+              muotoileAika(t.scheduledTime)
+              if (t.commercialTrack != "") {
+                teksti += " raiteelle " + t.commercialTrack;
+            }
+            teksti += "</p>";
           }
           i++;
         }
@@ -52,13 +59,13 @@ function kerro(data) {
 }
 
 function muotoileAika(aika) {
-    pvm = new Date (aika);
-    let kuu = Number(pvm.getMonth())+1;
-    let teksti = pvm.getDate() + "." + kuu + "." + pvm.getFullYear();
-    let min = pvm.getMinutes();
-    if (min==0) {
-        min = "00"
-    }
-    teksti += " klo " + pvm.getHours() + ":" + min;
-    return teksti;
+  pvm = new Date(aika);
+  let kuu = Number(pvm.getMonth()) + 1;
+  let teksti = pvm.getDate() + "." + kuu + "." + pvm.getFullYear();
+  let min = pvm.getMinutes();
+  if (min == 0) {
+    min = "00";
+  }
+  teksti += " klo " + pvm.getHours() + ":" + min;
+  return teksti;
 }
