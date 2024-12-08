@@ -36,7 +36,7 @@ function kerro(data) {
             t = train.timeTableRows[i];
 
             teksti +=
-              "</hr><h3>" + train.trainType + train.trainNumber + "</h3>";
+              "<hr><h3>" + train.trainType + train.trainNumber + "</h3>";
             teksti +=
               "<p>Lähtöaika Helsingistä: " + muotoileAika(h.scheduledTime);
             if (h.commercialTrack != "") {
