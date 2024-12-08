@@ -32,6 +32,10 @@ body {
     display: none;
   }
 
+  .image {
+    padding: 0 7%;
+  }
+
   #vastaus {
     padding: 0.5% 7% 1% 3%;
   }
