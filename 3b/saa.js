@@ -33,6 +33,6 @@ function kerro(data, field) {
   teksti += "</li><li><b>Tuulen nopeus: </b> " + data.wind.speed + " m/s";
   teksti += "</li></ul>";
   let kuva = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-  teksti += "<p class='image'><img src='" + kuva + "'alt='sää ikoni'></img></p>";
+  teksti += "<p><img class='weatherIcon' src='" + kuva + "'alt='sää ikoni'></img></p>";
   teksti += document.getElementById(field).innerHTML = teksti;
 }
