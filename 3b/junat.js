@@ -48,7 +48,7 @@ function kerro(data) {
               if (t.commercialTrack != "") {
                 teksti += " raiteelle " + t.commercialTrack;
             }
-            teksti += "</p>";
+            teksti += ".</p>";
           }
           i++;
         }
