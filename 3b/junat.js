@@ -1,5 +1,5 @@
 fetch(
-  "https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?departing_trains=100&include_nonstopping=false"
+  "https://rata.digitraffic.fi/api/v1/live-trains/station/HKI?departing_trains=200&include_nonstopping=false"
 )
   .then(function (response) {
     return response.json();
