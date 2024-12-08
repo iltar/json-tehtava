@@ -22,32 +22,24 @@ function kerro(data) {
       !train.runningCurrently &&
       train.trainCategory == "Long-distance"
     ) {
+      teksti += "</hr><h3>" + "tyyppi" + "nro" + "</h3>";
+      teksti +=
+        "<p>Lähtöaika Helsingistä: " +
+        "pvm" +
+        " kello " +
+        "klo" +
+        ". Saapumisaika Tampereelle: " +
+        "pvm" +
+        " kello " +
+        "klo" +
+        "</p>";
+
       // lähtee helsingistä
       if (train.timeTableRows[0].stationShortCode == "HKI") {
         let h = train.timeTableRows[0];
         let t;
         let i = 1;
-        while (t == null) {
-          if (
-            train.timeTableRows[i].stationShortCode == "TPE" &&
-            train.timeTableRows[i].type == "ARRIVAL"
-          ) {
-            t = train.timeTableRows[i];
-
-            teksti += "</hr><h3>" + "tyyppi" + "nro" + "</h3>";
-            teksti +=
-              "<p>Lähtöaika Helsingistä: " +
-              "pvm" +
-              " kello " +
-              "klo" +
-              ". Saapumisaika Tampereelle: " +
-              "pvm" +
-              " kello " +
-              "klo" +
-              "</p>";
-          }
-          i++;
-        }
+        
       }
     }
   });
