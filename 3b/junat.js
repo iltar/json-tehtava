@@ -35,16 +35,12 @@ function kerro(data) {
           ) {
             t = train.timeTableRows[i];
 
-            teksti += "</hr><h3>" + "tyyppi" + "nro" + "</h3>";
+            teksti += "</hr><h3>" + train.trainType + train.trainNumber + "</h3>";
             teksti +=
               "<p>Lähtöaika Helsingistä: " +
-              "pvm" +
-              " kello " +
-              "klo" +
+              muotoileAika(h.scheduledTime) + 
               ". Saapumisaika Tampereelle: " +
-              "pvm" +
-              " kello " +
-              "klo" +
+              muotoileAika(t.scheduledTime) +
               "</p>";
           }
           i++;
@@ -53,4 +49,16 @@ function kerro(data) {
     }
   });
   document.getElementById("vastaus").innerHTML = teksti;
+}
+
+function muotoileAika(aika) {
+    pvm = new Date (aika);
+    let kuu = Number(pvm.getMonth())+1;
+    let teksti = pvm.getDate() + "." + kuu + "." + pvm.getFullYear();
+    let min = pvm.getMinutes();
+    if (min==0) {
+        min = "00"
+    }
+    teksti += " klo " + pvm.getHours() + ":" + min;
+    return teksti;
 }
