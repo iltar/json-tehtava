@@ -32,8 +32,8 @@ body {
     display: none;
   }
 
-  #sisalto {
-    padding: 1% 3%;
+  #vastaus {
+    padding: 1% 7% 1% 3%;
   }
   
   @media screen and (max-width: 600px) {
