@@ -16,7 +16,7 @@ function kerro(data) {
   lista.forEach((kamera) => {
     let k = kamera.properties;
 
-    // ainoastaan valtatie 3:n kamerat jotka ovat tamperetta etelämmässä
+    // ainoastaan valtatie 3:n kamerat jotka ovat tamperetta etelämpänä
     if (k.name.substr(0, 4) == "vt3_" && kamera.geometry.coordinates[1] < 62) {
       teksti += "<h3>" + k.dataUpdatedTime + "</h3>";
 
